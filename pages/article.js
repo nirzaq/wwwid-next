@@ -13,8 +13,9 @@ import Index from "./index";
 export default class Article extends Component {
   static async getInitialProps(context) {
     const { title } = context.query;
+    const baseUrl = `https://wwwid-qbwvbflbmz.now.sh`
     const res = await fetch(
-      "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2Fwwwid"
+      baseUrl + "/api/feed"
     );
     const data = await res.json();
     console.log(`data fetched from article page`);
